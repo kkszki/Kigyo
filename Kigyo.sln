@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kigyo", "Kigyo\Kigyo.csproj", "{7C326EB4-1F4D-4209-9D31-E2A06F0FCA5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C326EB4-1F4D-4209-9D31-E2A06F0FCA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C326EB4-1F4D-4209-9D31-E2A06F0FCA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C326EB4-1F4D-4209-9D31-E2A06F0FCA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C326EB4-1F4D-4209-9D31-E2A06F0FCA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D5E08C5-928D-4788-A82E-F0026E287C42}
+	EndGlobalSection
+EndGlobal
