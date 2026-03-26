@@ -16,8 +16,15 @@ namespace Kigyo.Map
             {
                 for (int j = 0; j < oszlopok; j++)
                 {
-
-                    palya[i, j] = $"[{i},{j}]";
+                    if (i == 2 && j==0)
+                    {
+                        palya[i, j] = $" b ";
+                    }
+                    else
+                    {
+                        palya[i, j] = $" x ";
+                    }
+                        
                 }
             }
 
