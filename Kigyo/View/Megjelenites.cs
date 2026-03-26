@@ -10,9 +10,9 @@ namespace Kigyo.View
     {
         public static void FoMegjelenites()
         {
-            for (int i = 0; i < Program.x; i++)
+            for (int i = 0; i < Program.x_palya; i++)
             {
-                for (int j = 0; j < Program.y; j++)
+                for (int j = 0; j < Program.y_palya; j++)
                 {
                     Console.Write(Program.aktualis_palya[i, j]);
                 }
