@@ -28,6 +28,16 @@ namespace Kigyo.Controller
                 case ConsoleKey.DownArrow:
                 case ConsoleKey.S:
 
+                    if (Program.Most_fej_x + 1 >= Program.x_palya)
+                    {
+                        Console.WriteLine("Neki ment a szélének");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                        break;
+                    }
+
+
+
                     if (Program.aktualis_palya[Program.Most_fej_x+1,Program.Most_fej_y]== "🟫" || Program.aktualis_palya[Program.Most_fej_x + 1, Program.Most_fej_y] == "🟥") 
                     { Program.Most_fej_x++;
                         Elhagyottmezo();
@@ -40,6 +50,9 @@ namespace Kigyo.Controller
                     }
 
 
+                    
+
+
 
 
 
@@ -48,6 +61,16 @@ namespace Kigyo.Controller
 
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.W:
+                    if (Program.Most_fej_x - 1 <= 0)
+                    {
+                        Console.WriteLine("Neki ment a szélének");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                        break;
+                    }
+
+
+
                     if (Program.aktualis_palya[Program.Most_fej_x - 1, Program.Most_fej_y] == "\U0001f7eb" || Program.aktualis_palya[Program.Most_fej_x - 1, Program.Most_fej_y] == "\U0001f7e5")
                     {
                         Program.Most_fej_x--;
@@ -66,6 +89,17 @@ namespace Kigyo.Controller
 
                 case ConsoleKey.LeftArrow:
                 case ConsoleKey.A:
+
+
+                    if (Program.Most_fej_y - 1 <= 0)
+                    {
+                        Console.WriteLine("Neki ment a szélének");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                        break;
+                    }
+
+
                     if (Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y - 1] == "\U0001f7eb" || Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y - 1] == "\U0001f7e5")
                     {
                         Program.Most_fej_y--;
@@ -80,6 +114,16 @@ namespace Kigyo.Controller
                     break;
                 case ConsoleKey.RightArrow:
                 case ConsoleKey.D:
+
+                    if (Program.Most_fej_y + 1 >= Program.y_palya)
+                    {
+                        Console.WriteLine("Neki ment a szélének");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                        break;
+                    }
+
+
                     if (Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y + 1] == "\U0001f7eb" || Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y + 1] == "\U0001f7e5")
                     { 
 
