@@ -10,11 +10,21 @@ namespace Kigyo.Controller
 {
     internal class KigyoController
     {
+
+        static ConsoleKey utolsoIrany = ConsoleKey.Q;
         public static void UpdatePosition()
         {
-           
-            switch (Console.ReadKey(true).Key)
+
+            if (Console.KeyAvailable)
             {
+                
+                utolsoIrany = Console.ReadKey(true).Key;
+            }
+
+       
+            switch (utolsoIrany)
+            {
+
                 case ConsoleKey.DownArrow:
                 case ConsoleKey.S:
 
@@ -60,21 +70,22 @@ namespace Kigyo.Controller
                     }
                     break;
 
-
+                   
             }
 
 
-            
-            
-           
-
-            
-
-            
-     
 
 
-            
+            System.Threading.Thread.Sleep(400);
+
+
+
+
+
+
+
+
+
 
 
             Console.Clear();

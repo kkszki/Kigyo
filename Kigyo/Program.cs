@@ -12,8 +12,8 @@ namespace Kigyo
 {
     internal class Program
     {
-        public static int x_palya = 5;
-        public static int y_palya = 5;
+        public static int x_palya = 10;
+        public static int y_palya = 10;
         public static string[,] aktualis_palya = Palya.PalyaGeneralo(x_palya, y_palya);
 
         public static int Most_fej_x = 0;
