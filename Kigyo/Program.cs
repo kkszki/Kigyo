@@ -14,7 +14,7 @@ namespace Kigyo
     {
         public static int x_palya = 10;
         public static int y_palya = 10;
-        public static string[,] aktualis_palya = Palya.PalyaGeneralo(x_palya, y_palya);
+        public static string[,] aktualis_palya = Palya.PalyaGeneralo(Program.x_palya, Program.y_palya);
         public static bool fut=true;
         public static int Most_fej_x = 0;
         public static int Most_fej_y = 0;
@@ -27,16 +27,20 @@ namespace Kigyo
        
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding =Encoding.UTF8;
+            Parameterek.PalyaMeret();
+            Controller.Terkep.TerkepBeallit();
+            aktualis_palya = Palya.PalyaGeneralo(Program.x_palya, Program.y_palya);
+            
             KigyoController.RandomGyumolcs();
             while (fut)
             {
-                
+
                 Fo.MainProgram();
-                
-                
+
+
             }
-            
+
 
 
         }

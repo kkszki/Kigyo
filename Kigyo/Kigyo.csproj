@@ -45,15 +45,19 @@
   <ItemGroup>
     <Compile Include="Controller\Fo.cs" />
     <Compile Include="Controller\KigyoController.cs" />
+    <Compile Include="Controller\Terkep.cs" />
     <Compile Include="Kigyo\Pozicio.cs" />
     <Compile Include="Map\Palya.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Megjelenites.cs" />
+    <Compile Include="View\Parameterek.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
