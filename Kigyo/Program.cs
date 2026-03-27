@@ -19,6 +19,7 @@ namespace Kigyo
         public static int Most_fej_x = 0;
         public static int Most_fej_y = 0;
         public static int KigyoHossza = 1;
+        
         public static List<Pozicio> poziciok = new List<Pozicio>()
         {
             new Pozicio(0,0) 
