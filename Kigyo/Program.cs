@@ -15,7 +15,7 @@ namespace Kigyo
         public static int x_palya = 10;
         public static int y_palya = 10;
         public static string[,] aktualis_palya = Palya.PalyaGeneralo(x_palya, y_palya);
-
+        public static bool fut=true;
         public static int Most_fej_x = 0;
         public static int Most_fej_y = 0;
         public static int KigyoHossza = 1;
@@ -29,11 +29,14 @@ namespace Kigyo
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             KigyoController.RandomGyumolcs();
-            while (true)
+            while (fut)
             {
                 
                 Fo.MainProgram();
+                
+                
             }
+            
 
 
         }

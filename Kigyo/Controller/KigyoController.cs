@@ -32,8 +32,14 @@ namespace Kigyo.Controller
                     { Program.Most_fej_x++;
                         Elhagyottmezo();
                     }
+                    else
+                    {
+                        Console.WriteLine("Átment volna magán a kígyó!");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                    }
 
-                   
+
 
 
 
@@ -47,9 +53,15 @@ namespace Kigyo.Controller
                         Program.Most_fej_x--;
                         Elhagyottmezo();
                     }
+                    else
+                    {
+                        Console.WriteLine("Átment volna magán a kígyó!");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                    }
 
-                       
-                    
+
+
                     break;
 
                 case ConsoleKey.LeftArrow:
@@ -59,6 +71,12 @@ namespace Kigyo.Controller
                         Program.Most_fej_y--;
                         Elhagyottmezo();
                     }
+                    else
+                    {
+                        Console.WriteLine("Átment volna magán a kígyó!");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                    }
                     break;
                 case ConsoleKey.RightArrow:
                 case ConsoleKey.D:
@@ -67,6 +85,13 @@ namespace Kigyo.Controller
 
                         Program.Most_fej_y++;
                     Elhagyottmezo();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Átment volna magán a kígyó!");
+                        Console.WriteLine("GAME OVER");
+                        Program.fut = false;
+                      
                     }
                     break;
 
@@ -85,10 +110,12 @@ namespace Kigyo.Controller
 
 
 
+            if (Program.fut)
+            {
 
 
-
-            Console.Clear();
+                Console.Clear();
+            }
 
 
         }
