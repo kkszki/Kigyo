@@ -18,25 +18,14 @@ namespace Kigyo.Map
                 {
                     if (i==0 && j == 0)
                     {
-                        palya[i, j] = $" ■ ";
+                        palya[i, j] = $"🟩";
                         
                     }
 
-                    else if (i == 5 && j == 0)
-                    {
-                        palya[i, j] = $" ☺ ";
-                    }
-                    else if (i == 5 && j == 2)
-                    {
-                        palya[i, j] = $" ☺ ";
-                    }
-                    else if (i == 5 && j == 5)
-                    {
-                        palya[i, j] = $" ☺ ";
-                    }
+                   
                     else
                     {
-                        palya[i, j] = $" □ ";
+                        palya[i, j] = $"🟫";
                     }
                         
                 }
@@ -45,6 +34,8 @@ namespace Kigyo.Map
 
             return palya;
         }
+
+       
 
 
     }

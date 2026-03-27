@@ -15,7 +15,7 @@ namespace Kigyo.Controller
             Megjelenites.FoMegjelenites();
            
             KigyoController.UpdatePosition();
-
+           
 
         }
     }

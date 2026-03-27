@@ -12,8 +12,8 @@ namespace Kigyo
 {
     internal class Program
     {
-        public static int x_palya = 15;
-        public static int y_palya = 15;
+        public static int x_palya = 5;
+        public static int y_palya = 5;
         public static string[,] aktualis_palya = Palya.PalyaGeneralo(x_palya, y_palya);
 
         public static int Most_fej_x = 0;
@@ -28,8 +28,10 @@ namespace Kigyo
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            KigyoController.RandomGyumolcs();
             while (true)
             {
+                
                 Fo.MainProgram();
             }
 
