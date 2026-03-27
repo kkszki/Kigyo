@@ -12,8 +12,7 @@ namespace Kigyo.Controller
 
         public static void TerkepBeallit()
         {
-            Console.WriteLine(Parameterek.akutalis_menupont);
-            Console.ReadKey();
+           
              
             switch (Parameterek.akutalis_menupont)
             {
