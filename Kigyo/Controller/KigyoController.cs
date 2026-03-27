@@ -13,32 +13,56 @@ namespace Kigyo.Controller
         public static void UpdatePosition()
         {
            
-            
-            
-
-            if (Console.ReadLine() == "s")
+            switch (Console.ReadKey(true).Key)
             {
-                Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y] = " x ";
-                Program.Most_fej_x++;
-           
-                
+                case ConsoleKey.DownArrow:
+                case ConsoleKey.S:
+                    
+                    Program.Most_fej_x++;
+                    break;
 
-               
+                case ConsoleKey.UpArrow:
+                case ConsoleKey.W:
+                    
+                    Program.Most_fej_x--;
+                    break;
+
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.A:
+                    Program.Most_fej_y--;
+                    break;
+                case ConsoleKey.RightArrow:
+                case ConsoleKey.D:
+                    Program.Most_fej_y++;
+                    break;
+
 
             }
 
-            if (Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y] == " b ")
+
+            
+            if (Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y] != " ☆ ")
             {
-               
+                Program.aktualis_palya[Program.poziciok[0].X_fej, Program.poziciok[0].Y_fej] = " ☐ ";
                 Program.poziciok.RemoveAt(0);
             }
+
+            for (int i = 0; i < Program.poziciok.Count; i++)
+            {
+                Program.aktualis_palya[Program.poziciok[i].X_fej, Program.poziciok[i].Y_fej] = " ☒ ";
+            }
+           
+
+            
+
+            
      
 
 
             Program.poziciok.Add(new Kigyo.Pozicio(Program.Most_fej_x, Program.Most_fej_y));
 
 
-            Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y] = " a ";
+            Program.aktualis_palya[Program.Most_fej_x, Program.Most_fej_y] = " ☒ ";
 
 
             Console.Clear();

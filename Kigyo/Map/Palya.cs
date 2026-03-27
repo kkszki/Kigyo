@@ -16,18 +16,23 @@ namespace Kigyo.Map
             {
                 for (int j = 0; j < oszlopok; j++)
                 {
-                    if (i == 2 && j==0)
+                    if (i==0 && j == 0)
                     {
-                        palya[i, j] = $" b ";
+                        palya[i, j] = $" ☒ ";
+                        
+                    }
+
+                    else if (i == 5 && j == 0)
+                    {
+                        palya[i, j] = $" ☆ ";
                     }
                     else
                     {
-                        palya[i, j] = $" x ";
+                        palya[i, j] = $" ☐ ";
                     }
                         
                 }
             }
-
 
 
             return palya;
