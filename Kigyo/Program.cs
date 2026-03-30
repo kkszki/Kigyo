@@ -19,6 +19,8 @@ namespace Kigyo
         public static int Most_fej_x = 0;
         public static int Most_fej_y = 0;
         public static int KigyoHossza = 1;
+        public static bool teljesitve = false;
+        
         
         public static List<Pozicio> poziciok = new List<Pozicio>()
         {
@@ -40,6 +42,16 @@ namespace Kigyo
 
 
             }
+            Console.Clear();
+            Megjelenites.FoMegjelenites();
+
+        
+            Console.WriteLine("Játék Vége!");
+            if (teljesitve)
+            {
+                Console.WriteLine("Telejesítve");
+            }
+            Console.ReadLine();
 
 
 

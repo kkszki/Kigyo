@@ -45,7 +45,7 @@ namespace Kigyo.Controller
                             Console.WriteLine("Hibás bemenet! Számot kértem:");
                         }
                     }
-
+                    Console.WriteLine("Adja meg az y szélességet: ");
 
                     siker = false;
                     while (!siker)

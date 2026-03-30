@@ -1,5 +1,6 @@
 ﻿using Kigyo;
 using Kigyo.Kigyo;
+using Kigyo.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Kigyo.Controller
         static ConsoleKey utolsoIrany = ConsoleKey.Q;
         public static void UpdatePosition()
         {
-
+            utolsoIrany = ConsoleKey.Q;
             if (Console.KeyAvailable)
             {
                 
@@ -32,6 +33,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Neki ment a szélének");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                         break;
                     }
@@ -46,6 +48,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Átment volna magán a kígyó!");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                     }
 
@@ -65,6 +68,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Neki ment a szélének");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                         break;
                     }
@@ -80,6 +84,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Átment volna magán a kígyó!");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                     }
 
@@ -95,6 +100,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Neki ment a szélének");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                         break;
                     }
@@ -109,6 +115,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Átment volna magán a kígyó!");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                     }
                     break;
@@ -119,6 +126,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Neki ment a szélének");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                         break;
                     }
@@ -134,6 +142,7 @@ namespace Kigyo.Controller
                     {
                         Console.WriteLine("Átment volna magán a kígyó!");
                         Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         Program.fut = false;
                       
                     }
@@ -145,7 +154,7 @@ namespace Kigyo.Controller
 
 
 
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(400);
 
 
 
@@ -193,15 +202,41 @@ namespace Kigyo.Controller
 
         public static void RandomGyumolcs()
         {
-            Random rnd = new Random();
-            int ranom_x = rnd.Next(0, Program.x_palya);
-            int ranom_y = rnd.Next(0, Program.y_palya);
-            while (Program.aktualis_palya[ranom_x, ranom_y] != "\U0001f7eb")
+            List<Pozicio> pozicioklista = new List<Pozicio>();
+           
+
+            for (int i = 0; i < Program.x_palya; i++)
             {
-                ranom_x = rnd.Next(0, Program.x_palya);
-                ranom_y = rnd.Next(0, Program.y_palya);
+                for (int j = 0; j < Program.y_palya; j++)
+                {
+                    if (Program.aktualis_palya[i, j] == "\U0001f7eb")
+                    {
+                        pozicioklista.Add(new Pozicio(i, j));
+                    }
+
+                }
             }
-            Program.aktualis_palya[ranom_x, ranom_y] = "🟥";
+
+            if (pozicioklista.Count() == 0 )
+            {
+
+                Program.fut=false;
+                Program.teljesitve = true;
+                
+
+
+            }
+            else
+            {
+                Random rnd = new Random();
+                int random = rnd.Next(0, pozicioklista.Count());
+
+               
+                    Program.aktualis_palya[pozicioklista[random].X_fej, pozicioklista[random].Y_fej] = "🟥";
+               
+               
+            }
+            
         }
     }
 }
