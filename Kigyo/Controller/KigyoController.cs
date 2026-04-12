@@ -15,7 +15,7 @@ namespace Kigyo.Controller
         static ConsoleKey utolsoIrany = ConsoleKey.Q;
         public static void UpdatePosition()
         {
-            utolsoIrany = ConsoleKey.Q;
+           
             if (Console.KeyAvailable)
             {
                 
