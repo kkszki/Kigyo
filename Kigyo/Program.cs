@@ -7,6 +7,7 @@ using Kigyo.Controller;
 using Kigyo.Kigyo;
 using Kigyo.Map;
 using Kigyo.View;
+using Kigyo.User;
 
 namespace Kigyo
 {
@@ -27,7 +28,7 @@ namespace Kigyo
             new Pozicio(0,0) 
         };
        
-        static void Main(string[] args)
+        static void Main()
         {
             Console.OutputEncoding =Encoding.UTF8;
             Parameterek.PalyaMeret();
@@ -51,9 +52,33 @@ namespace Kigyo
             {
                 Console.WriteLine("Telejesítve");
             }
+
+
+            int pont = Program.poziciok.Count - 1;
+            Console.WriteLine($"Pontszám: {pont}");
+            string name = User.Pontszam.Nev();
+
+            if (pont > 1)
+            {
+                User.Pontszam.PontSave(name, pont);
+            }
+
+            
+
+            //Console.WriteLine("Újra? (I/n)");
+            //string ujra = Console.ReadLine();
+            //if (ujra.ToLower() == "n")
+            //{
+            //    Console.WriteLine("Viszlát!");
+            //    Environment.Exit(0);
+            //}
+            //else 
+            //{
+            //    Program.Main();
+            //}
+
+
             Console.ReadLine();
-
-
 
         }
     }
