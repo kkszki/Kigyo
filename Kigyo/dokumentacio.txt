@@ -1,0 +1,89 @@
+🐍 Kígyó játék – KigyoController dokumentáció
+📌 Áttekintés
+
+A KigyoController osztály egy konzolos Snake (kígyó) játék vezérlője. Feladata:
+
+a játékos irányításának kezelése
+a kígyó mozgatása a pályán
+ütközések ellenőrzése
+gyümölcs kezelés
+játékállapot frissítése
+
+A logika egy statikus pályamodellre (Program.aktualis_palya) és pozíciólistára (Program.poziciok) épül.
+
+🧠 Fő komponensek
+🧩 Osztály: KigyoController
+🔹 Felelősség
+Input feldolgozás (billentyűzet)
+kígyó mozgatása
+játékállapot módosítása
+ütközéskezelés
+🎮 Fő metódusok
+▶️ UpdatePosition()
+📌 Leírás
+
+
+A játék fő ciklusában hívott metódus, amely:
+
+ellenőrzi a billentyű lenyomást
+frissíti a mozgás irányát
+mozgatja a kígyót
+kezeli az ütközéseket
+frissíti a pályát
+késlelteti a játékot
+⌨️ Irányítás
+Billentyű	Irány
+↑ / W	fel
+↓ / S	le
+← / A	bal
+→ / D	jobb
+⚙️ Mozgás logika
+
+Minden irány esetén:
+
+új pozíció kiszámítása
+fal ütközés ellenőrzése
+önmagával ütközés ellenőrzése
+ha valid:
+kígyó mozgatása (Elhagyottmezo())
+ha invalid:
+GAME OVER
+💥 Ütközéskezelés
+🧱 Fal ütközés
+Ha a fej kilép a pályáról → játék vége
+🐍 Önmaga ütközés
+Ha a következő mező nem üres vagy gyümölcs → GAME OVER
+🧱 Elhagyottmezo()
+📌 Leírás
+
+Kezeli a kígyó testének frissítését és a pálya állapotát.
+
+🔄 Műveletek
+Farok eltávolítása (ha nem evett)
+Régi mezők frissítése
+új fej pozíció hozzáadása
+pálya frissítése
+🍎 Gyümölcs eset
+
+Ha a kígyó gyümölcsre lép:
+
+nem törlődik a farok
+új gyümölcs generálódik (RandomGyumolcs())
+🍎 RandomGyumolcs()
+📌 Leírás
+
+Új gyümölcsöt helyez el véletlenszerű üres mezőre.
+
+🔄 Művelet lépései:
+végigmegy a pályán
+összegyűjti az üres mezőket
+véletlenszerű pozíciót választ
+elhelyez egy gyümölcsöt
+🏁 Játék vége feltétel
+
+Ha nincs több üres mező:
+
+Program.fut = false
+Program.teljesitve = true
+
+→ a játék megnyert állapotba kerül

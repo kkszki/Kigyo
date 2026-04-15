@@ -11,7 +11,7 @@ namespace Kigyo.Controller
 {
     internal class KigyoController
     {
-
+        
         static ConsoleKey utolsoIrany = ConsoleKey.Q;
         public static void UpdatePosition()
         {
