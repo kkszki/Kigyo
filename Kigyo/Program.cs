@@ -47,6 +47,7 @@ namespace Kigyo
             {
                 Console.Clear(); // Letöröljük az előző állapotot
                 Console.WriteLine("Üdvözöljük! ");
+                Console.WriteLine("");
 
                 // Menü kirajzolása
                 for (int i = 0; i < Opciok.Count; i++)
