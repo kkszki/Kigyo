@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Kigyo.User;
 
 namespace Kigyo.User
 {
@@ -45,6 +46,32 @@ namespace Kigyo.User
             {
                 Console.WriteLine("DB hiba: " + ex.Message);
             }
+        }
+
+        public void ShowPontList(List<UserPont> ponts)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            Console.WriteLine("┌──────┬─────────────────────────┬──────────────────────────────────────────┐");
+            Console.WriteLine("│  Id  │           Név           │                 Pontszám                 │");
+            Console.WriteLine("│      │                         │                                          │");
+            Console.WriteLine("├──────┼─────────────────────────┼──────────────────────────────────────────┤");
+
+            bool first = true;
+            foreach (var pont in ponts)
+            {
+                if (!first)
+                {
+                    Console.WriteLine("├──────┼─────────────────────────┼──────────────────────────────────────────┤");
+                }
+
+                Console.WriteLine($"│{pont.Id,-6}│{pont.Nev,-25}│{pont.Pont,-42}│");
+                first = false;
+            }
+
+            Console.WriteLine("└──────┴─────────────────────────┴──────────────────────────────────────────┘");
+
+
         }
     }
 }

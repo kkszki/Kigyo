@@ -21,8 +21,8 @@ namespace Kigyo
         public static int Most_fej_y = 0;
         public static int KigyoHossza = 1;
         public static bool teljesitve = false;
-        
-        
+
+
         public static List<Pozicio> poziciok = new List<Pozicio>()
         {
             new Pozicio(0,0) 
@@ -30,11 +30,95 @@ namespace Kigyo
        
         static void Main()
         {
-            Console.OutputEncoding =Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+            int akutalis_menupont = 0;
+
+            List<string> Opciok = new List<string>()
+            {
+                "Jéték indítása",
+                "Legjobb eredmények",
+                "Kilépés"
+            };
+
+            bool kivalaszt = true;
+
+
+            while (kivalaszt)
+            {
+                Console.Clear(); // Letöröljük az előző állapotot
+                Console.WriteLine("Üdvözöljük! ");
+
+                // Menü kirajzolása
+                for (int i = 0; i < Opciok.Count; i++)
+                {
+                    if (i == akutalis_menupont)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(Opciok[i]);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{Opciok[i]}");
+                    }
+                }
+
+
+                ConsoleKey gomb = Console.ReadKey(true).Key;
+                switch (gomb)
+                {
+                    case ConsoleKey.S:
+                    case ConsoleKey.DownArrow:
+
+                        if (akutalis_menupont < Opciok.Count - 1)
+                        {
+                            akutalis_menupont++;
+                        }
+                        break;
+
+                    case ConsoleKey.W:
+                    case ConsoleKey.UpArrow:
+
+                        if (akutalis_menupont > 0)
+                        {
+                            akutalis_menupont--;
+                        }
+                        break;
+
+                    case ConsoleKey.Enter:
+                        kivalaszt = false;
+                        break;
+                }
+            }
+
+            Console.Clear();
+
+            switch (akutalis_menupont)
+            {
+                case 0:
+                    Game();
+                    break;
+                case 1:
+                    List<UserPont> ponts = UserPont.GetPontList();
+                    new Pontszam().ShowPontList(ponts);
+                    Console.ReadLine();
+                    Program.Main();
+                    break;
+                case 2:
+                    Console.WriteLine("Viszlát!");
+                    Environment.Exit(0);
+                    break;
+            }
+
+        }
+
+        static void Game() 
+        {
+            Console.OutputEncoding = Encoding.UTF8;
             Parameterek.PalyaMeret();
             Controller.Terkep.TerkepBeallit();
             aktualis_palya = Palya.PalyaGeneralo(Program.x_palya, Program.y_palya);
-            
+
             KigyoController.RandomGyumolcs();
             while (fut)
             {
@@ -46,7 +130,7 @@ namespace Kigyo
             Console.Clear();
             Megjelenites.FoMegjelenites();
 
-        
+
             Console.WriteLine("Játék Vége!");
             if (teljesitve)
             {
@@ -56,30 +140,14 @@ namespace Kigyo
 
             int pont = Program.poziciok.Count - 1;
             Console.WriteLine($"Pontszám: {pont}");
-            string name = User.Pontszam.Nev();
+            string name = Pontszam.Nev();
 
             if (pont > 1)
             {
-                User.Pontszam.PontSave(name, pont);
+                Pontszam.PontSave(name, pont);
             }
 
-            
-
-            //Console.WriteLine("Újra? (I/n)");
-            //string ujra = Console.ReadLine();
-            //if (ujra.ToLower() == "n")
-            //{
-            //    Console.WriteLine("Viszlát!");
-            //    Environment.Exit(0);
-            //}
-            //else 
-            //{
-            //    Program.Main();
-            //}
-
-
             Console.ReadLine();
-
         }
     }
 }

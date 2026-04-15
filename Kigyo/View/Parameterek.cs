@@ -12,12 +12,12 @@ namespace Kigyo.View
         public static void PalyaMeret()
         {
             List<string> palyaOpciok = new List<string>()
-{
-    "5*5 pálya",
-    "10*10 pálya",
-    "15*15 pálya",
-    "Egyéb"
-};
+                {
+                    "5*5 pálya",
+                    "10*10 pálya",
+                    "15*15 pálya",
+                    "Egyéb"
+                };
 
             bool kivalaszt = true;
             
@@ -25,7 +25,6 @@ namespace Kigyo.View
             while (kivalaszt)
             {
                 Console.Clear(); // Letöröljük az előző állapotot
-                Console.WriteLine("Üdvözöljük! ");
           
                 // Menü kirajzolása
                 for (int i = 0; i < palyaOpciok.Count; i++)
@@ -71,12 +70,6 @@ namespace Kigyo.View
             }
 
             Console.Clear();
-
-
-
-            
-         
-
         }
 
 
