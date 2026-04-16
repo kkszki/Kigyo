@@ -28,7 +28,7 @@ namespace Kigyo.User
         {
             MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password=;database=snake;");
             conn.Open();
-            string comd = "SELECT * FROM snake  ;";
+            string comd = "SELECT * FROM snake ORDER BY pont DESC;";
             MySqlCommand cmd = new MySqlCommand(comd, conn);
             List<UserPont> pontok = new List<UserPont>();
             using (MySqlDataReader reader = cmd.ExecuteReader())
